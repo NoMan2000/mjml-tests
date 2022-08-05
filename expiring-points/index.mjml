@@ -1,0 +1,229 @@
+<mjml>
+    <mj-head>
+         <mj-font name="Raleway"
+       href="https://fonts.googleapis.com/css?family=Raleway" />
+
+    </mj-head>
+    <mj-body background-color="white">
+        <mj-section>
+            <mj-column>
+                <mj-image
+                    src="{{api_trigger_properties.${logoUrl}}}"
+                    border="0"
+                    width="50px"
+                    height="50px"
+                    alt="" />
+
+            </mj-column>
+            <mj-column>
+                <mj-text align="center">
+                    {{api_trigger_properties.${name}}}
+                </mj-text>
+            </mj-column>
+        </mj-section>
+        <mj-wrapper>
+        <!-- TODO:  Fix this by using mj-raw -->
+            <mj-hero
+                vertical-align="middle"
+                mode="fluid-height"
+                background-height="215px"
+                background-width="215px"
+                background-url="https://media.alle.com/image/upload/v1658942247/alle/email-template/circleImage_yas10s.png"
+            >
+                    <mj-text align="center" font-size="30px">
+                        {{api_trigger_properties.${expiringPoints}}}
+                    </mj-text>
+                    <mj-text align="center" font-size="13px">
+                        Points
+                    </mj-text>
+            </mj-hero>
+        </mj-wrapper>
+        <mj-section>
+            <mj-column>
+                <mj-text align="center">
+                    {{${first_name}}} {{${last_name}}}, your Allē points are going… going...
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        <mj-section>
+            <mj-column>
+                <mj-text>
+                    Don’t let these savings slip away! Put your Allē Wallet to good use and book in advance to make sure your preferred provider is available!
+                </mj-text>
+            </mj-column>
+        </mj-section>
+        <mj-section>
+            <mj-column>
+                <mj-button
+                    color="white"
+                    background-color="black"
+                    padding="15px"
+                    border-radius="4px"
+                    width="200px"
+                    href="tel:{{api_trigger_properties.${phoneNumber}}}"
+                >
+                    <mj-text>
+                        Don’t let these savings slip away! Put your Allē Wallet to good use and book in advance to make sure your preferred provider is available!
+                    </mj-text>
+                    <mj-image
+                        height="25px"
+                        width="25px"
+                        src="https://media.alle.com/image/upload/v1659035896/alle/email-template/phoneIcon_gdgmqi_fxzgjy.png"
+                    />
+                    <mj-text>
+                        {% if {{api_trigger_properties.${displayPhoneNumber}}} %}
+                        {{api_trigger_properties.${displayPhoneNumber}}}
+                        {% else %}
+                        {{api_trigger_properties.${phoneNumber}}}
+                        {% endif %}
+                    </mj-text>
+                </mj-button>
+            </mj-column>
+        </mj-section>
+        <mj-section>
+            <mj-column>
+                <mj-image src="{{api_trigger_properties.${locationImageUrl}}}" />
+            </mj-column>
+        </mj-section>
+
+        <mj-section>
+            <mj-column>
+                <mj-text>
+                    Get <i>in touch</i>
+                </mj-text>
+            </mj-column>
+        </mj-section>
+        <mj-section>
+            <mj-column>
+                <mj-image height="22px" width="16px" src="https://media.alle.com/image/upload/v1659397805/alle/email-template/mapIcon_nbmfyy.png" />
+                <mj-text>
+                    {{api_trigger_properties.${address1}}} {{api_trigger_properties.${city}}}, {{api_trigger_properties.${state}}} {{api_trigger_properties.${zipCode}}}
+                </mj-text>
+            </mj-column>
+        </mj-section>
+        <mj-section>
+            <mj-column>
+                <mj-image height="22px" width="22px" src="https://media.alle.com/image/upload/v1659035896/alle/email-template/phoneIcon_gdgmqi_fxzgjy.png" />
+                    <mj-text padding-left="15px" padding-top="0">
+                        {% if {{api_trigger_properties.${displayPhoneNumber}}} %}
+                        {{api_trigger_properties.${displayPhoneNumber}}}
+                        {% else %}
+                        {{api_trigger_properties.${phoneNumber}}}
+                        {% endif %}
+                    </mj-text>
+            </mj-column>
+        </mj-section>
+        <mj-section>
+            <mj-column>
+                <mj-table>
+                    <tr>
+                        <td style="border-bottom: solid 1px #F7F7F7;">
+                            Monday
+                        </td>
+                        {% if {{api_trigger_properties.${officeHours}.MONDAY.closed}} %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            CLOSED
+                        </td>
+                        {% else %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            {{api_trigger_properties.${officeHours}.MONDAY.open}} -
+                            {{api_trigger_properties.${officeHours}.MONDAY.close}}
+                        </td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: solid 1px #F7F7F7;">
+                            Tuesday
+                        </td>
+                        {% if {{api_trigger_properties.${officeHours}.TUESDAY.closed}} %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            CLOSED
+                        </td>
+                        {% else %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            {{api_trigger_properties.${officeHours}.TUESDAY.open}} -
+                            {{api_trigger_properties.${officeHours}.TUESDAY.close}}
+                        </td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: solid 1px #F7F7F7;">
+                            Wednesday
+                        </td>
+                        {% if {{api_trigger_properties.${officeHours}.WEDNESDAY.closed}} %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            CLOSED
+                        </td>
+                        {% else %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            {{api_trigger_properties.${officeHours}.WEDNESDAY.open}} -
+                            {{api_trigger_properties.${officeHours}.WEDNESDAY.close}}
+                        </td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: solid 1px #F7F7F7;">
+                            Thursday
+                        </td>
+                        {% if {{api_trigger_properties.${officeHours}.THURSDAY.closed}} %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            CLOSED
+                        </td>
+                        {% else %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            {{api_trigger_properties.${officeHours}.THURSDAY.open}} -
+                            {{api_trigger_properties.${officeHours}.THURSDAY.close}}
+                        </td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:solid 1px #F7F7F7;">
+                            Friday
+                        </td>
+                        {% if {{api_trigger_properties.${officeHours}.FRIDAY.closed}} %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            CLOSED
+                        </td>
+                        {% else %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            {{api_trigger_properties.${officeHours}.FRIDAY.open}} -
+                            {{api_trigger_properties.${officeHours}.FRIDAY.close}}
+                        </td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: solid 1px #F7F7F7;">
+                            Saturday
+                        </td>
+                        {% if {{api_trigger_properties.${officeHours}.SATURDAY.closed}} %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom: solid 1px #F7F7F7;">
+                            CLOSED
+                        </td>
+                        {% else %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom: solid 1px #F7F7F7;">
+                            {{api_trigger_properties.${officeHours}.SATURDAY.open}} -
+                            {{api_trigger_properties.${officeHours}.SATURDAY.close}}
+                        </td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: solid 1px #F7F7F7;">
+                            Sunday
+                        </td>
+                        {% if {{api_trigger_properties.${officeHours}.SUNDAY.closed}} %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            CLOSED
+                        </td>
+                        {% else %}
+                        <td style="padding-top:10px;padding-bottom:10px;border-bottom:solid 1px #F7F7F7;">
+                            {{api_trigger_properties.${officeHours}.SUNDAY.open}} -
+                            {{api_trigger_properties.${officeHours}.SUNDAY.close}}
+                        </td>
+                        {% endif %}
+                    </tr>
+           </mj-table>
+        </mj-column>
+        </mj-section>
+    </mj-body>
+</mjml>
